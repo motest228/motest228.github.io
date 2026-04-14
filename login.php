@@ -3,6 +3,7 @@ session_start();
 
 $users = array(
     "okxn" => "okxn123",
+    "admin" => "admin123",
     // Info o autorze itd.
 ); 
 
