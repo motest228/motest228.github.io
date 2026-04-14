@@ -9,9 +9,7 @@ function sanitize_input($data) {
     return htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
 }
 
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: index.php");
-    exit;
+
 }
 // This is made by Magiczny_Jasiek, and only he can sell it. If you bought it from other vacban.wtf listing that was not this one: https://vacban.wtf/vacshop/78615/ then be careful using it. It is not official.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $link_zdjecia = ($_POST['link_zdjecia']);
     $plec = sanitize_input($_POST['plec']);
   
-    $username = $_SESSION['username'];
+ 
   
     $dowodnowy_template = file_get_contents('templates/dowodnowy.html');
     $dashboard_template = file_get_contents('templates/dashboard.html');
